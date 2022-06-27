@@ -1,0 +1,20 @@
+{
+  "name": "React-Class-June-22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shift3/React-Class-June-22.git"
+  },
+  "keywords": [],
+  "author": "Mehdi Aitbrahim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shift3/React-Class-June-22/issues"
+  },
+  "homepage": "https://github.com/Shift3/React-Class-June-22#readme"
+}
