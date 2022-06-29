@@ -5,7 +5,15 @@ const getMoviesByName = async(name='Batman') => {
   const response = await fetch(`${API_URL}/?apiKey=${API_KEY}&s=${name}`);
   const data = await response.json();
 
-  console.log('movies:', data);
+  console.log('10 first results of movies:', data);
 }
 
 getMoviesByName('Better call');
+
+const getMovieDetailsById = async (movieId='tt3032476') => {
+  const response = await fetch(`${API_URL}/?apiKey=${API_KEY}&i=${movieId}`);
+  const data = await response.json();
+  console.log('Movie:', data);
+}
+
+getMovieDetailsById();
