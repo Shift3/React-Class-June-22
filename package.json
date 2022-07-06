@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "format": "prettier --write \"03-js-react-tools/src/**/*.{js, jsx}\"",
-    "lint": "eslint \"03-js-react-tools/src/**/*.{js, jsx}\" --quiet",
-    "dev": "parcel 03-js-react-tools/src/index.html"
+    "format": "prettier --write \"04-core-concept/src/**/*.{js, jsx}\"",
+    "lint": "eslint \"04-core-concept/src/**/*.{js, jsx}\" --quiet",
+    "dev": "parcel 04-core-concept/src/index.html"
   },
   "repository": {
     "type": "git",
