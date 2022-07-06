@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "format": "prettier --write \"03-js-react-tools/src/**/*.{js, jsx}\""
-  },
+    "format": "prettier --write \"03-js-react-tools/src/**/*.{js, jsx}\"",
+    "lint": "eslint \"03-js-react-tools/src/**/*.{js, jsx}\" --quiet"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shift3/React-Class-June-22.git"
@@ -22,6 +23,8 @@
     "axios": "^0.27.2"
   },
   "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.5.1"
   }
 }
