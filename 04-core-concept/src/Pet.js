@@ -13,7 +13,7 @@ const Pet = (props) => {
       </div>
       <div>
         <h2>{name}</h2>
-        <h3>{`${animal} - ${breed} = ${location}`}</h3>
+        <h3>{`${animal} - ${breed} - ${location}`}</h3>
       </div>
     </a>
   );
