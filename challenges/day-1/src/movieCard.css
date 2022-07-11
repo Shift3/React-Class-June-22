@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  width: 10rem;
+  height: 12rem;
+  padding: 2rem 3rem;
+  margin-top: 3rem;;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+span {
+  background-color: pink;
+  color: red;
+  display: block;
+  border: solid;
+  text-align: center;
+}
