@@ -16,6 +16,7 @@ function App() {
       {movies.length ? (
         <div className="App">
         <MovieCard 
+          movieId={movies[0].imdbID}
           title={movies[0].Title} 
           type={movies[0].Type} 
           posterUrl={movies[0].Poster}/>
