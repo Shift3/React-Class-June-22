@@ -1,4 +1,5 @@
 import { Component } from "react";
+import "./carousel.css";
 
 class Carousel extends Component {
   state = {
