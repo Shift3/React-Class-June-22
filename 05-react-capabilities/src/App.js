@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Details from "./Details";
+import WrappedDetails from "./Details";
 import SearchParams from "./SearchParams";
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
             <h1>Pet Adoption!</h1>
           </Link>
           <Routes>
-            <Route path="/details/:id" element={<Details />} />
+            <Route path="/details/:id" element={<WrappedDetails />} />
             <Route path="/" element={<SearchParams />} />
           </Routes>
         </div>
