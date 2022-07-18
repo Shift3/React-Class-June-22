@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {getMovieDetailsById} from './utils';
+import {getMovieDetailsById} from '../utils';
 import "./movieDetails.css";
 
 const MovieDetails = ({movieId}) => {
