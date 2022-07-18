@@ -1,0 +1,20 @@
+.main {
+  margin: 1rem auto;
+  padding: 1rem 3rem;;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: auto;
+  gap: 1rem;
+}
+
+.main form {
+  grid-row: 1;
+}
+
+.main form > button { 
+  margin-left: 2rem;
+}
+
+.main > div {
+  grid-row: 2;
+}

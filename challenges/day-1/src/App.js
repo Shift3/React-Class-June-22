@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import './App.css';
-import MovieCard from './components/MovieCard';
 import {getMoviesByName} from './utils';
 import Header from './components/Header';
 import Spinner from './components/Spinner';
 import MovieList from './components/MovieList';
+import SearchBar from './components/SearchBar';
+import classes from './App.module.css';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('batman');
@@ -25,13 +25,21 @@ function App() {
 
   }, [searchTerm]);
 
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    setSearchTerm(prev => e.target.searchInput.value);
+  }
+
   return (
     <>
       <Header />
       { isLoading ? (
         <Spinner />
       ) : (
-        <MovieList movies={movies}/>
+        <div className={classes.main}>
+          <SearchBar onSubmit={onSubmitHandler}/> 
+          <MovieList movies={movies}/> 
+        </div>
       )}
     </>
   );
