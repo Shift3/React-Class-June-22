@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <h1>OMDB Application</h1>
+      <h1 style={{textAlign: "center"}}>OMDB Application</h1>
     </header>
   );
 }

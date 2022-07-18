@@ -4,6 +4,7 @@ import MovieCard from './components/MovieCard';
 import {getMoviesByName} from './utils';
 import Header from './components/Header';
 import Spinner from './components/Spinner';
+import MovieList from './components/MovieList';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('batman');
@@ -30,13 +31,7 @@ function App() {
       { isLoading ? (
         <Spinner />
       ) : (
-        <div className="App">
-        {
-            movies.map(movie => (
-              <MovieCard key={movie.imdbID}  movie={movie}/>
-            ))
-        }
-      </div>
+        <MovieList movies={movies}/>
       )}
     </>
   );
