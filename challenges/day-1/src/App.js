@@ -28,6 +28,7 @@ function App() {
     }).catch(err => {
       setMovies([]);
       setError(`Error occured: ${err}`);
+      console.log("Error:", error);
       setTotalPages(null);
     }).finally(() => setIsLoading(false));
 
