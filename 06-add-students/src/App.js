@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState} from 'react';
+import AddStudent from './components/student/AddStudent'; 
+import Students from './components/student/Students'; 
 
-function App() {
+const App = () => {
+  const [studentsList, setStudentsList ] = useState([]);
+
+  const addStudentHandler = (fullName, level) => {
+    setStudentsList(prevList => {
+      return [{
+        fullName,
+        level,
+        id: Math.random().toString()
+      },...prevList
+    ]
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+    <AddStudent onAddStudent = {addStudentHandler} />
+
+    <Students students={studentsList} /> 
+  </>
   );
 }
 
