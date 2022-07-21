@@ -18,7 +18,7 @@ const MovieDetails = ({movieId}) => {
         <div className="movie">
           <img src={movie.Poster} alt="movie.Title" style={{paddingRight:'2rem'}} />
           <div className="movieDetail">
-            <h2>{movie.Title}</h2>
+            <h2 style={{color: 'white'}}>{movie.Title}</h2>
             <h1 style={{color: 'blue'}}>{movie.imdbRating}</h1> 
 
             <div>
