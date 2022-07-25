@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import LoginPage from "./login"
+import LoginPage from "./login";
+import RegisterPage from "./register";
 import ContactsPage from "./contacts";
 import ContactDetailsPage from "./contact-details";
 import ContactCreatePage from "./contact-create";
@@ -58,6 +59,10 @@ const App = () => {
 
         <Route path="/login">
           <LoginPage />
+        </Route>
+
+        <Route path="/register">
+          <RegisterPage />
         </Route>
 
         <Route path="/">
