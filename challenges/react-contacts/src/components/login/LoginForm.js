@@ -1,59 +1,47 @@
-import React from 'react';
+import {useState} from 'react';
 
-class LoginForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            password: '',
-        };
+const LoginForm = () => {
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+    const [isAuthenticated, setIsAutheniticated] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [loginUser, setuser] = useState();
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    }
-
-    handleInputChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
-
-    handleFormSubmit(event) {
+    const handleFormSubmit = (event) => {
         event.preventDefault();
-        
+        setIsSubmitted(true);
     }
-
-    render() {
-        return (
-            <form onSubmit={this.handleFormSubmit}>
-                <div>
-                    <label htmlFor="username">Username</label>
-                    <input 
-                        id="username"
-                        name="username"
-                        type="text" 
-                        placeholder="Username"  
-                        value={this.state.username}
-                        onChange={this.handleInputChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input 
-                        id="password"
-                        name="password"
-                        type="password" 
-                        placeholder="Password"
-                        value={this.state.password}
-                        onChange={this.handleInputChange}
-                    />
-                </div>
-                <div>
-                    <button type="submit">Login</button>
-                </div>
-            </form>
-        )
-    }
+    return (
+        <>
+            <form onSubmit={handleFormSubmit}>
+            <div className="form_group">
+                <label htmlFor="username">Username</label>
+                <input 
+                    id="username"
+                    name="username"
+                    type="text" 
+                    placeholder="Username"  
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                />
+            </div>
+            <div className="form_group">
+                <label htmlFor="password">Password</label>
+                <input 
+                    id="password"
+                    name="password"
+                    type="password" 
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </div>
+            <div style={{marginTop: "1.5rem"}}>
+                <button style={{cursor: "pointer"}} type="submit">Login</button>
+            </div>
+        </form>
+        </>
+    );
 }
 
 export default LoginForm;
