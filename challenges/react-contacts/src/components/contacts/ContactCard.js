@@ -1,21 +1,35 @@
 import Card from 'react-bootstrap/Card';
+import Image from "react-bootstrap/Image";
+import Col from "react-bootstrap/Col";
 import styled from 'styled-components';
 
-const ContactCard = ({ firstName='', lastName='', phoneNumber='', profilePic='' }) => {
+const ContactCard = ({ 
+    firstName='', 
+    lastName='', 
+    phoneNumber='', 
+    profilePic='',
+    onRemove }) => {
     return (
-        <BootCard className="shadow p-4">
-            <div>
+        <BootCard className="shadow p-4" onClick={() => {}}>
+            <Row>
+                <Col md={4} style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <div>
-                    <img src={profilePic} alt={`Profile of ${firstName} ${lastName}.`} />
+                    <Image 
+                        src={profilePic} 
+                        alt={`Profile of ${firstName} ${lastName}.`} 
+                        style={{borderRadius: "50%"}}
+                        width="150"
+                    />
                 </div>
                 <div>
                     <p>{firstName} {lastName}</p>
                     <p>{phoneNumber}</p>
                 </div>
-            </div>
-            <div>
-                <button>X</button>
-            </div>
+                </Col>
+            <Col md={3} className="px-4" style={{display:"flex", justifyContent:"flex-end"}}>
+                <BootButton onClick={onRemove}>X</BootButton>
+            </Col>
+            </Row>
         </BootCard>
     )
 }
