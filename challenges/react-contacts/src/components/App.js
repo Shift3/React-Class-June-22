@@ -1,10 +1,8 @@
-import React from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import LoginPage from "./login"
-import RegisterPage from "./register";
 import ContactsPage from "./contacts";
 import ContactDetailsPage from "./contact-details";
 import ContactCreatePage from "./contact-create";
-import { getContacts } from "../utils/contacts";
 
 const mockContacts = [
   {
@@ -46,35 +44,28 @@ const mockContacts = [
 ];
 
 
-class App extends React.Component {
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/contacts/add">
+          <ContactCreatePage />
+        </Route>
+        
+        <Route path="/contacts/:id">
+          <ContactDetailsPage contacts={mockContacts}/>
+        </Route>
 
-  constructor(props) {
-    super(props);
+        <Route path="/login">
+          <LoginPage />
+        </Route>
 
-    this.state = {
-      contacts: []
-    }
-  }
-
-  componentDidMount() {
-    const storedContacts = getContacts();
-
-    this.setState({
-      contacts: storedContacts.length ? storedContacts : mockContacts
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <LoginPage />
-        <RegisterPage />
-        <ContactsPage contacts={this.state.contacts} />
-        <ContactDetailsPage contact={this.state.contacts[0]} />
-        <ContactCreatePage />
-      </div>
-    );
-  }
+        <Route path="/">
+        <ContactsPage contacts={mockContacts} />
+        </Route>
+      </Switch>
+    </Router>
+  );
 }
 
 export default App;
