@@ -53,7 +53,7 @@ const App = () => {
         </Route>
         
         <Route path="/contacts/:id">
-          <ContactDetailsPage contacts={mockContacts}/>
+          <ContactDetailsPage contact={mockContacts[0]}/>
         </Route>
 
         <Route path="/login">
