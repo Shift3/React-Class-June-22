@@ -1,12 +1,14 @@
-import { StrictMode } from "react";
+import { StrictMode, useState } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import WrappedDetails from "./Details";
 import SearchParams from "./SearchParams";
+import ThemeContext from "./ThemeContext";
 
 const App = () => {
+  const theme = useState("Yellow");
   return (
-    <StrictMode>
+    <ThemeContext.Provider value={theme}>
       <BrowserRouter>
         <div>
           <Link to="/">
@@ -18,8 +20,13 @@ const App = () => {
           </Routes>
         </div>
       </BrowserRouter>
-    </StrictMode>
+    </ThemeContext.Provider>
   );
 };
 
-render(<App />, document.getElementById("root"));
+render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById("root")
+);
