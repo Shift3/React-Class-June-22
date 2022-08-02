@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "format": "prettier --write \"07-special-cases/src/**/*.{js, jsx}\"",
-    "lint": "eslint \"07-special-cases/src/**/*.{js, jsx}\" --quiet",
-    "dev": "parcel 07-special-cases/src/index.html"
+    "format": "prettier --write \"09-code-splitting/src/**/*.{js, jsx}\"",
+    "lint": "eslint \"09-code-splitting/src/**/*.{js, jsx}\" --quiet",
+    "dev": "parcel 09-code-splitting/src/index.html"
   },
   "repository": {
     "type": "git",
