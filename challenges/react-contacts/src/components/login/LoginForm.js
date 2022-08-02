@@ -1,15 +1,24 @@
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import { useAuth } from '../../contexts/authContext';
 
 const LoginForm = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [isAuthenticated, setIsAutheniticated] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [loginUser, setuser] = useState();
+    const {loginUser, user } = useAuth();
+    const history = useHistory();
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
         setIsSubmitted(true);
+        const isAuthenticated = loginUser(userName, password);
+        console.log('user:', user);
+        if(isAuthenticated){
+            setIsAutheniticated(true);
+            history.pushState('/');
+        }
     }
     return (
         <>
@@ -40,6 +49,9 @@ const LoginForm = () => {
                 <button style={{cursor: "pointer"}} type="submit">Login</button>
             </div>
         </form>
+        <p style={{ color: "red"}}>
+            {(!isAuthenticated && isSubmitted) && "Login failed!"}
+        </p>
         </>
     );
 }
