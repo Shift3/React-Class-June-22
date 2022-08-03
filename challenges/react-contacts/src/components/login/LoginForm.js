@@ -17,7 +17,7 @@ const LoginForm = () => {
         console.log('user:', user);
         if(isAuthenticated){
             setIsAutheniticated(true);
-            history.pushState('/');
+            history.push('/');
         }
     }
     return (
