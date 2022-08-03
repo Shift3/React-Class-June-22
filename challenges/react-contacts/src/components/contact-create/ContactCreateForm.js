@@ -1,5 +1,7 @@
 import {useState} from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+import { useContact } from "../../contexts/contactContext";
 
 const ContactCreateForm = (props) => {
     const [firstName, setFirstName ] = useState('');
@@ -9,8 +11,27 @@ const ContactCreateForm = (props) => {
     const [address, setAddress ] = useState('');
     const [profilePic, setProfilePic ] = useState('');
 
+    const { createNewContact } = useContact();
+    const history = useHistory();
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        createNewContact({
+            firstName,
+            lastName,
+            phoneNumber,
+            email,
+            address,
+            profilePic
+        });
+
+        setFirstName("");
+        setLastName("");
+        setPhoneNumber("");
+        setEmail("");
+        setAddress("");
+        setProfilePic("");
+        history.push("/");
     };
 
     return(

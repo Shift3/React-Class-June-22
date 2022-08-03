@@ -1,16 +1,19 @@
+import { useHistory } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Image from "react-bootstrap/Image";
 import Col from "react-bootstrap/Col";
 import styled from 'styled-components';
 
 const ContactCard = ({ 
+    id='',
     firstName='', 
     lastName='', 
     phoneNumber='', 
     profilePic='',
     onRemove }) => {
+        const history = useHistory();
     return (
-        <BootCard className="shadow p-4" onClick={() => {}}>
+        <BootCard className="shadow p-4" onClick={() => history.push(`/contacts/${id}`)}>
             <Row>
                 <Col md={4} style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <div>
