@@ -1,29 +1,30 @@
-import { StrictMode, useState, lazy, Suspense } from "react";
+import { StrictMode, lazy, Suspense } from "react";
 import { render } from "react-dom";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import ThemeContext from "./ThemeContext";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store";
+import Header from "./Header";
 
 const WrappedDetails = lazy(() => import("./Details"));
 const SearchParams = lazy(() => import("./SearchParams"));
 
 const App = () => {
-  const theme = useState("Yellow");
   return (
-    <ThemeContext.Provider value={theme}>
+    <Provider store={store}>
       <Suspense fallback={<h1>loading route...</h1>}>
-        <BrowserRouter>
-          <div>
-            <Link to="/">
-              <h1>Pet Adoption!</h1>
-            </Link>
-            <Routes>
-              <Route path="/details/:id" element={<WrappedDetails />} />
-              <Route path="/" element={<SearchParams />} />
-            </Routes>
-          </div>
-        </BrowserRouter>
+        <Router>
+          <Header />
+          <Switch>
+            <Route path="/details/:id">
+              <WrappedDetails />
+            </Route>
+            <Route path="/">
+              <SearchParams />
+            </Route>
+          </Switch>
+        </Router>
       </Suspense>
-    </ThemeContext.Provider>
+    </Provider>
   );
 };
 
