@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "format": "prettier --write \"09-code-splitting/src/**/*.{js, jsx}\"",
-    "lint": "eslint \"09-code-splitting/src/**/*.{js, jsx}\" --quiet",
-    "dev": "parcel 09-code-splitting/src/index.html"
+    "format": "prettier --write \"10-redux/src/**/*.{js, jsx}\"",
+    "lint": "eslint \"10-redux/src/**/*.{js, jsx}\" --quiet",
+    "dev": "parcel 10-redux/src/index.html"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
     "axios": "^0.27.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
